@@ -14,73 +14,75 @@
   }
 
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Mode - Using lighter teals as backgrounds, darker greens as text */
+    --background: 165 25% 95%; /* Very light mint/teal */
+    --foreground: 155 35% 15%; /* Very dark forest green */
 
-    --card: 240 5% 96%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 165 20% 92%; /* Light teal card background */
+    --card-foreground: 155 35% 15%; /* Very dark forest green */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 165 25% 95%; /* Very light mint/teal */
+    --popover-foreground: 155 35% 15%; /* Very dark forest green */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 155 40% 25%; /* Dark forest green */
+    --primary-foreground: 165 25% 95%; /* Very light mint/teal */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 160 25% 85%; /* Light sage/teal */
+    --secondary-foreground: 155 35% 20%; /* Dark forest green */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 165 20% 88%; /* Soft teal */
+    --muted-foreground: 155 25% 35%; /* Medium forest green */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 30% 75%; /* Medium teal accent */
+    --accent-foreground: 155 35% 20%; /* Dark forest green */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%; /* Red for errors */
+    --destructive-foreground: 165 25% 95%; /* Very light mint/teal */
 
-    --border: 240 6% 80%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 165 20% 80%; /* Light teal border */
+    --input: 165 20% 88%; /* Soft teal input */
+    --ring: 155 40% 35%; /* Forest green focus ring */
 
     --radius: 0.2rem;
 
-    --success: 196 52% 74%;
-    --warning: 34 89% 85%;
-    --error: 10 100% 86%;
+    --success: 155 45% 45%; /* Forest green success */
+    --warning: 45 85% 55%; /* Amber warning */
+    --error: 0 70% 50%; /* Red error */
   }
 
-  [data-theme='dark'] {
-    --background: 0 0% 0%;
-    --foreground: 210 40% 98%;
+  [data-theme="dark"] {
+    /* Dark Mode - Using darker greens as backgrounds, lighter teals as text */
+    --background: 155 30% 8%; /* Very dark forest green */
+    --foreground: 165 20% 88%; /* Light teal */
 
-    --card: 0 0% 4%;
-    --card-foreground: 210 40% 98%;
+    --card: 155 25% 12%; /* Dark forest green card */
+    --card-foreground: 165 20% 88%; /* Light teal */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 155 30% 10%; /* Very dark forest green */
+    --popover-foreground: 165 20% 88%; /* Light teal */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 165 25% 75%; /* Light teal */
+    --primary-foreground: 155 30% 8%; /* Very dark forest green */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 155 20% 18%; /* Medium dark forest green */
+    --secondary-foreground: 165 20% 88%; /* Light teal */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 155 20% 16%; /* Dark forest green muted */
+    --muted-foreground: 165 15% 65%; /* Medium teal */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 35% 45%; /* Medium teal accent */
+    --accent-foreground: 165 20% 88%; /* Light teal */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 55%; /* Red for errors */
+    --destructive-foreground: 165 20% 88%; /* Light teal */
 
-    --border: 0, 0%, 15%, 0.8;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 155 20% 22%; /* Dark forest green border */
+    --input: 155 20% 16%; /* Dark forest green input */
+    --ring: 160 35% 55%; /* Bright teal focus ring */
 
-    --success: 196 100% 14%;
-    --warning: 34 51% 25%;
-    --error: 10 39% 43%;
+    --success: 155 50% 55%; /* Bright forest green success */
+    --warning: 45 85% 65%; /* Bright amber warning */
+    --error: 0 65% 55%; /* Red error */
   }
 }
 
@@ -89,15 +91,83 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+    @apply bg-background text-foreground font-sans;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Typography styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  pre,
+  code {
+    @apply font-mono;
   }
 }
 
 html {
   opacity: 0;
+  scroll-behavior: smooth;
 }
 
-html[data-theme='dark'],
-html[data-theme='light'] {
+html[data-theme="dark"],
+html[data-theme="light"] {
   opacity: initial;
 }
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles for better accessibility */
+button:focus-visible,
+a:focus-visible {
+  @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Code snippet styling */
+.code-snippet {
+  @apply font-mono text-sm bg-muted p-4 rounded-md overflow-x-auto border;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Selection colors */
+::selection {
+  @apply bg-accent/30 text-accent-foreground;
+}
+
+/* Enhanced focus ring for better accessibility */
+.focus-ring {
+  @apply focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/* Subtle gradient backgrounds for enhanced depth */
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+}
+

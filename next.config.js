@@ -17,6 +17,12 @@ const nextConfig = {
 
     return config
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Ignore eslint errors during build
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {

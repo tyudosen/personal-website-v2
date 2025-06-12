@@ -8,7 +8,7 @@ export function HighImpactHeroV2() {
     <section className="container px-4 py-16 sm:py-24 md:py-32">
       <div className="flex flex-col items-center gap-6 text-center max-w-2xl mx-auto">
         <Avatar className="h-20 w-20 sm:h-24 sm:w-24">
-          <AvatarImage src="/placeholder.svg?height=96&width=96" alt="Toyoabasi Udosen" />
+          <AvatarImage src="./avatar.jpeg" alt="Toyoabasi Udosen" />
           <AvatarFallback>TU</AvatarFallback>
         </Avatar>
         <div className="space-y-3">

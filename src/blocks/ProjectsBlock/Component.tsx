@@ -9,7 +9,13 @@ export function ProjectsBlock() {
           title="RAG AI Chat App"
           description="A retrieval augumented generation AI chat app built with NextJs & Vercel AI SDK."
           tags={["React", "NextJS", "PostgresSQL", "Vercel AI SDK"]}
-          link="https://ai-chat-app-three-drab.vercel.app/"
+          projectLink="https://ai-chat-app-three-drab.vercel.app/"
+          githubLink="https://github.com/tyudosen/ai-chat-app"
+          media={{
+            type: "image",
+            src: "./chat.svg",
+            alt: "Project Alpha dashboard screenshot",
+          }}
         />
       </div>
     </section>

@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
+import posthog from 'posthog-js'
+import { captureExternalLink } from "@/utilities/postHog"
 
 interface ProjectCardProps {
   title: string
@@ -117,6 +119,7 @@ export function ProjectCard({
                 size="sm"
                 className="w-full text-xs sm:text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
                 asChild
+                onClick={() => captureExternalLink(projectLink, { title, description })}
               >
                 <Link href={projectLink} target="_blank" rel="noopener noreferrer">
                   View Project
@@ -130,6 +133,7 @@ export function ProjectCard({
                 size="sm"
                 className="w-full text-xs sm:text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
                 asChild
+                onClick={() => captureExternalLink(projectLink, { title, description })}
               >
                 <Link href={githubLink} target="_blank" rel="noopener noreferrer">
                   View Github

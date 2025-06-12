@@ -1,7 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import posthog from 'posthog-js'
+import { captureExternalLink } from "@/utilities/postHog"
+
 
 export function HighImpactHeroV2() {
   return (
@@ -16,19 +21,24 @@ export function HighImpactHeroV2() {
           <p className="text-muted-foreground text-lg sm:text-xl">Senior Software Engineer</p>
         </div>
         <div className="flex gap-3 sm:gap-4">
-          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild>
+          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild
+            onClick={() => captureExternalLink('https://github.com/tyudosen')}
+          >
             <Link href="https://github.com/tyudosen" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild>
+          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild
+            onClick={() => captureExternalLink('https://linkedin.com/in/toyoabasi')}          >
             <Link href="https://linkedin.com/in/toyoabasi" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild>
+          <Button variant="ghost" size="icon" className="h-10 w-10 sm:h-11 sm:w-11" asChild
+            onClick={() => captureExternalLink('mail-client')}
+          >
             <Link href="mailto:tyudosen@gmail.com">
               <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="sr-only">Email</span>

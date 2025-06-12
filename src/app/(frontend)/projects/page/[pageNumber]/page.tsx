@@ -54,7 +54,7 @@ export default async function Page({ params: paramsPromise }: Args) {
       <CollectionArchive posts={projects.docs} />
 
       <div className="container">
-        {projects?.page && posts?.totalPages > 1 && (
+        {projects?.page && projects?.totalPages > 1 && (
           <Pagination page={projects.page} totalPages={projects.totalPages} />
         )}
       </div>

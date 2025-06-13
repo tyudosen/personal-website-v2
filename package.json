@@ -80,6 +80,7 @@
       "core-js",
       "esbuild",
       "mysharp",
+      "sharp",
       "unrs-resolver"
     ]
   },
